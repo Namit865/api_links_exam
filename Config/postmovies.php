@@ -7,15 +7,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $releaseYear = isset($_POST['release_year']) ? $_POST['release_year'] : 0;
 
     $data = new Data();
-    $conn = $data->checkConnection();
+    $conn = $data->__construct();
 
-    if ($data->addMovie($title, $director, $releaseYear)) {
+    if ($data->addMoviesData($title, $director, $releaseYear)) {
         echo "New record created successfully";
     } else {
         echo "Error adding movie";
     }
 
-    $conn->close();
+    $this->conn->close();
 } else {
     echo "Invalid request method";
 }
