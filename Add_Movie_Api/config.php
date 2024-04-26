@@ -1,15 +1,16 @@
+
 <?php
 
 class Data{
-public $username = "root";
-public $server = "127.0.0.1";
-public $password = "";
-public $dbname = "localhost";
+public $USERNAME = "root";
+public $HOSTNAME = "127.0.0.1";
+public $PASSWORD = "";
+public $DATABASE = "movies";
 public $connection =false;
 
 public function __construct()
 {
-    $this->connection = mysqli_connect($this->server,$this->username,$this->password,$this->dbname);
+    $this->connection = mysqli_connect($this->HOSTNAME,$this->USERNAME,$this->PASSWORD,$this->DATABASE);
 }
 
 
